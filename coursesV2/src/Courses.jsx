@@ -1,14 +1,31 @@
 import Course from "./Course";
+import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Courses({ courses, removeCourse }) {
+  const [index, setIndex] = useState(0);
+  const { content, title, price } = courses[index];
   //console.log(courses);
   return (
     <div className="courseMainDiv">
       <div>
         <h2>Kurslarım</h2>
       </div>
-      <div className="Courses">
-        {courses.map((course) => {
+      <div className="CardDiv">
+        <button className="prevNextBtn">
+          <FaChevronLeft />
+        </button>
+        <div className="Card">
+          <div className="CardtTtlePrice">
+            <h2 className="CardTitle">{title}</h2>
+            <h4 className="CardPrice">{price}TL</h4>
+          </div>
+          <p className="CardContent"> {content}</p>
+        </div>
+        <button className="prevNextBtn">
+          <FaChevronRight />
+        </button>
+        {/*   {courses.map((course) => {
           return (
             <Course
               key={course.id}
@@ -16,8 +33,7 @@ function Courses({ courses, removeCourse }) {
               removeOneCourse={removeCourse}
             />
           );
-          //course={course}
-        })}
+        })} */}
       </div>
     </div>
   );
