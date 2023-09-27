@@ -1,4 +1,4 @@
-import Course from "./Course";
+import Course from "./Course"; 
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
